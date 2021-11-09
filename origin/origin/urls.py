@@ -18,17 +18,19 @@ from django.urls import path
 # from django.urls import include
 # from .router import router
 
-# from bond import views
-from bonds import views as view
-from rest_framework.authtoken import views
+from bonds.views import HelloWorld
+from bonds.views import BondView
+# from bonds import views as view
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', HelloWorld.as_view()),
-    path('', view.get_bond, name='get-bond'),
-    path('get-bond', view.get_bond, name='get-bond'),
-    path('post-bond', view.post_bond, name='post-bond'),
+    path('', HelloWorld.as_view()),
+    # path('', view.get_bond, name='get-bond'),
+    # path('get-bond', view.get_bond, name='get-bond'),
+    # path('post-bond', view.post_bond, name='post-bond'),
+    path('bonds/', BondView.as_view(), name='bonds'),
     # path('filter-bond', view.filter_bond, name='filter-bond'),
     # path('api/', include(router.urls)), 
-    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth')
+    path('api-token-auth/', obtain_auth_token, name='api-token-auth')
 ]
