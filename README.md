@@ -1,13 +1,11 @@
 # Origin Markets Backend Test
 ### Done
 - Simple API for GET and POST 
-- Filter bond when GET
+- Filter bond when GET using userid
 - Search legal name 
-
-### Todo:
 - Add authentication
-- Catch edge cases and exceptions
-- Test cases
+- Add test cases to catch exceptions
+
 ### Spec:
 
 We would like you to implement an api to: ingest some data representing bonds, query an external api for some additional data, store the result, and make the resulting data queryable via api.

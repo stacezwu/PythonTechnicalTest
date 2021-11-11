@@ -26,11 +26,6 @@ from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HelloWorld.as_view()),
-    # path('', view.get_bond, name='get-bond'),
-    # path('get-bond', view.get_bond, name='get-bond'),
-    # path('post-bond', view.post_bond, name='post-bond'),
     path('bonds/', BondView.as_view(), name='bonds'),
-    # path('filter-bond', view.filter_bond, name='filter-bond'),
-    # path('api/', include(router.urls)), 
     path('api-token-auth/', obtain_auth_token, name='api-token-auth')
 ]
